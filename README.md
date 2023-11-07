@@ -26,7 +26,7 @@ occhio ai costruttori! spostando un attributo nella classe genitore, dobbiamo pa
 Aggiungiamo anche degli attributi unici per le nuove classi. Per esempio:
 per la classe Movie:
 $published_year anno di pubblicazione
-$running_timedurata in minuti 
+$running_time durata in minuti 
 per la classe TvSerie:
 $aired_from_year anno di messa in onda del primo episodio
 $aired_to_year anno di messa in onda dell’ultimo episodio
