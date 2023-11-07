@@ -28,12 +28,12 @@
       <?php foreach($movies as $movie){ ?>
       <div class="col-4">
         <div class="card m-3">
-        <img src="img/<?php echo $movie->image->file_name ?>" class="card-img-top" alt="<?php echo $movie->image->name ?>">
+        <img src="img/<?php echo $movie->getImage()->file_name ?>" class="card-img-top" alt="<?php echo $movie->getImage()->name ?>">
           <div class="card-body">
-            <h5 class="card-title"><?php echo $movie->title ?></h5>
-            <p class="card-text"><?php echo implode("/" , $movie->type ) ?></p>
-            <p class="card-text"><?php echo $movie->duration ?> minuti</p>
-            <p class="card-text"><?php echo times($movie->duration) ?></p>
+            <h5 class="card-title"><?php echo $movie->getTitle() ?></h5>
+            <p class="card-text"><?php echo implode("/" , $movie->getType() ) ?></p>
+            <p class="card-text"><?php echo $movie->getDuration() ?> minuti</p>
+            <p class="card-text"><?php echo times($movie->getDuration()) ?></p>
           </div>
         </div>
       </div>
