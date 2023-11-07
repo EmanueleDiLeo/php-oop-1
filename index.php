@@ -25,17 +25,32 @@
 </head>
 <body>
 
-  <div class="container mt-5">
+  <div class="container my-5">
     <div class="row">
       <?php foreach($productions as $production){ ?>
-      <div class="col-4">
-        <div class="card m-3">
+      <div class="col-4 my-4">
+        <div class="card h-100 m-3">
         <img src="img/<?php echo $production->getImage()->file_name ?>" class="card-img-top" alt="<?php echo $production->getImage()->name ?>">
           <div class="card-body">
             <h5 class="card-title"><?php echo $production->getTitle() ?></h5>
-            <p class="card-text"><?php echo implode("/" , $production->getType() ) ?></p>
-            <p class="card-text"><?php echo $production->getDuration() ?> minuti</p>
-            <p class="card-text"><?php echo times($production->getDuration()) ?></p>
+            <h6 class="card-title">Formato: <?php echo get_class($production) ?></h6>
+            <p class="card-text">Genere: <?php echo implode("/" , $production->getType() ) ?></p>
+
+            <?php if(get_class($production) == 'Movie'){ ?>
+              <p class="card-text">Anno di uscita: <?php echo $production->published_year ?></p>
+              <p class="card-text"><?php echo $production->running_timedurata ?> minuti</p>
+              <p class="card-text">Durata: <?php echo times($production->running_timedurata) ?></p>
+            <?php } ?>
+
+            <?php if(get_class($production) == 'TvSerie'){ ?>
+              <p class="card-text">Anno di inizio: <?php echo $production->aired_from_year ?></p>
+              <p class="card-text">Anno di fine: <?php echo $production->aired_to_year ?></p>
+              <p class="card-text">Episodi Totali: <?php echo times($production->number_of_episodes) ?></p>
+              <p class="card-text">Numero Stagioni: <?php echo times($production->number_of_seasons) ?></p>
+            <?php } ?>
+
+
+
           </div>
         </div>
       </div>

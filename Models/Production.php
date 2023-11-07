@@ -19,10 +19,6 @@
     return $this->title;
   }
 
-  public function getDuration(){
-    return $this->duration;
-  }
-
   public function getType(){
     return $this->type;
   }
