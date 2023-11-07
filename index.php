@@ -1,7 +1,9 @@
 <?php
 
   require_once __DIR__ . '/Models/Media.php';
+  require_once __DIR__ . '/Models/Production.php';
   require_once __DIR__ . '/Models/Movie.php';
+  require_once __DIR__ . '/Models/TvSerie.php';
   require_once __DIR__ . '/db/db.php';
 
   include __DIR__ . "/partials/functions.php";
@@ -25,15 +27,15 @@
 
   <div class="container mt-5">
     <div class="row">
-      <?php foreach($movies as $movie){ ?>
+      <?php foreach($productions as $production){ ?>
       <div class="col-4">
         <div class="card m-3">
-        <img src="img/<?php echo $movie->getImage()->file_name ?>" class="card-img-top" alt="<?php echo $movie->getImage()->name ?>">
+        <img src="img/<?php echo $production->getImage()->file_name ?>" class="card-img-top" alt="<?php echo $production->getImage()->name ?>">
           <div class="card-body">
-            <h5 class="card-title"><?php echo $movie->getTitle() ?></h5>
-            <p class="card-text"><?php echo implode("/" , $movie->getType() ) ?></p>
-            <p class="card-text"><?php echo $movie->getDuration() ?> minuti</p>
-            <p class="card-text"><?php echo times($movie->getDuration()) ?></p>
+            <h5 class="card-title"><?php echo $production->getTitle() ?></h5>
+            <p class="card-text"><?php echo implode("/" , $production->getType() ) ?></p>
+            <p class="card-text"><?php echo $production->getDuration() ?> minuti</p>
+            <p class="card-text"><?php echo times($production->getDuration()) ?></p>
           </div>
         </div>
       </div>

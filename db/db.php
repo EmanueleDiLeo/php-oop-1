@@ -1,6 +1,6 @@
 <?php
-  $movies = [
-    new Movie('Inception', 148, ['Azione', 'Sci-fi'], new Media ('Inception.webp', 'Inception')),
-    new Movie('Matrix', 133, ['Fantascienza'], new Media ('matrix.jpg', 'Matrix') ),
+  $productions = [
+    new Movie(2010, 148, 'Inception', ['Azione', 'Sci-fi'], new Media ('Inception.webp', 'Inception')),
+    new Movie(1999, 133, 'Matrix', ['Fantascienza'], new Media ('matrix.jpg', 'Matrix') ),
   ];
 ?>

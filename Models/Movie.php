@@ -1,38 +1,12 @@
 <?php
 
-  class Movie{
-   private $title;
-   private $duration;
-   private $type;
-   private $image;
+class Movie extends Production{
+  public $published_year;
+  public $duration;
 
-  public function __construct( string $_title, int $_duration, array $_type, Media $_image){
-    $this->title = $_title;
+  public function __construct( int $_published_year, int $_duration, string $_title, array $_type, Media $_image){
+    $this->published_year = $_published_year;
     $this->duration = $_duration;
-    $this->type = $_type;
-    $this->image = $_image;
+    parent::__construct($_title, $_type, $_image);
   }
-
-  public function setImage(Media $_image) {
-    $this->image = $_image;
-  }
-
-  public function getTitle(){
-    return $this->title;
-  }
-
-  public function getDuration(){
-    return $this->duration;
-  }
-
-  public function getType(){
-    return $this->type;
-  }
-
-  public function getImage(){
-    return $this->image;
-  }
-  
 }
-
-?>
