@@ -1,10 +1,15 @@
 <?php
 
-  require_once __DIR__ . '/Models/Media.php';
-  require_once __DIR__ . '/Models/Production.php';
-  require_once __DIR__ . '/Models/Movie.php';
-  require_once __DIR__ . '/Models/TvSerie.php';
-  require_once __DIR__ . '/db/db.php';
+  try{
+    require_once __DIR__ . '/Models/Media.php';
+    require_once __DIR__ . '/Models/Production.php';
+    require_once __DIR__ . '/Models/Movie.php';
+    require_once __DIR__ . '/Models/TvSerie.php';
+    require_once __DIR__ . '/db/db.php';
+  }
+  catch(Exception $e){
+    $error = $e->getMessage();
+  }
 
   include __DIR__ . "/partials/functions.php";
 
@@ -26,6 +31,12 @@
 <body>
 
   <div class="container my-5">
+
+    <?php if(isset($error)){ ?>
+      <div class="alert alert-danger " role="alert">
+        <?php echo $error ?>
+      </div>
+    <?php } else { ?>
     <div class="row">
       <?php foreach($productions as $production){ ?>
       <div class="col-4 my-4">
@@ -49,14 +60,14 @@
               <p class="card-text">Numero Stagioni: <?php echo $production->number_of_seasons ?></p>
             <?php } ?>
 
-
-
           </div>
         </div>
       </div>
       <?php } ?>
 
     </div>
+    <?php } ?>
+
   </div>
 
 

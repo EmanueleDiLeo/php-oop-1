@@ -35,3 +35,7 @@ $number_of_seasons numero di stagioni
 Bonus
 Creare un array misto di oggetti Movie e TvSerie. Stamparli a schermo in delle cards.
 NB: per gestire correttamente le stampe va gestito correttamente il polimorfismo delle classi, ossia la capacità di fare override dei metodi del genitore piuttosto che ereditarli.
+
+
+Day 3
+Continuare l’esercitazione di ieri aggiungendo al gestione degli errori (minimo uno) con throw Exception  - try/catch e aggiungere un trait (potrebbe essere l’anno di pubblicazione)

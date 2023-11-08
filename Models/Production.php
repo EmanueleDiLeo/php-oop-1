@@ -6,8 +6,20 @@
    protected $image;
 
   public function __construct(string $_title, array $_type, Media $_image){
-    $this->title = $_title;
-    $this->type = $_type;
+    
+    if(empty($_title)){
+      throw new Exception("Ci deve essere il titolo");
+    }else{
+      $this->title = $_title;
+    }
+    
+
+    if(empty($_type)){
+      throw new Exception("Ci deve essere almeno un genere");
+    }else{
+      $this->type = $_type;
+    }
+
     $this->image = $_image;
   }
 
@@ -25,6 +37,10 @@
 
   public function getImage(){
     return $this->image;
+  }
+
+  public function getFullInfo(){
+    
   }
   
 }

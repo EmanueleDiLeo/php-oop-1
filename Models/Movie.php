@@ -9,4 +9,8 @@ class Movie extends Production{
     $this->running_time = $_running_time;
     parent::__construct($_title, $_type, $_image);
   }
+
+  public function getFullInfo(){
+    
+  }
 }

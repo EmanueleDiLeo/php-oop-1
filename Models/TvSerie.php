@@ -13,4 +13,8 @@ class TvSerie extends Production{
     $this->number_of_seasons = $_number_of_seasons;
     parent::__construct($_title, $_type, $_image);
   }
+
+  public function getFullInfo(){
+    
+  }
 }
