@@ -3,7 +3,7 @@
   include __DIR__ . "/partials/functions.php";
 
   try{
-    require_once __DIR__ . '/Traits/Age.php';
+    require_once __DIR__ . '/Traits/Year.php';
     require_once __DIR__ . '/Models/Media.php';
     require_once __DIR__ . '/Models/Production.php';
     require_once __DIR__ . '/Models/Movie.php';

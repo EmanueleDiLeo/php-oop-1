@@ -2,7 +2,7 @@
 
 class Movie extends Production{
 
-  use Age;
+  use Year;
 
   public $running_time;
 

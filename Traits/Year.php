@@ -1,6 +1,6 @@
 <?php
 
-trait Age{
+trait Year{
   public $start_published_year;
   public $aired_to_year;
 

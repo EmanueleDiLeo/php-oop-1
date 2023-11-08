@@ -2,7 +2,7 @@
 
 class TvSerie extends Production{
 
-  use Age;
+  use Year;
 
   public $number_of_episodes;
   public $number_of_seasons;
