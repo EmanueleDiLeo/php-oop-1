@@ -1,6 +1,7 @@
 <?php
 
   try{
+    require_once __DIR__ . '/Traits/Age.php';
     require_once __DIR__ . '/Models/Media.php';
     require_once __DIR__ . '/Models/Production.php';
     require_once __DIR__ . '/Models/Movie.php';
@@ -48,13 +49,13 @@
             <p class="card-text">Genere: <?php echo implode("/" , $production->getType() ) ?></p>
 
             <?php if(get_class($production) == 'Movie'){ ?>
-              <p class="card-text">Anno di uscita: <?php echo $production->published_year ?></p>
+              <p class="card-text">Anno di uscita: <?php echo $production->start_published_year ?></p>
               <p class="card-text">Durata in minuti: <?php echo $production->running_time ?> minuti</p>
               <p class="card-text">Durata: <?php echo times($production->running_time) ?></p>
             <?php } ?>
 
             <?php if(get_class($production) == 'TvSerie'){ ?>
-              <p class="card-text">Anno di inizio: <?php echo $production->aired_from_year ?></p>
+              <p class="card-text">Anno di inizio: <?php echo $production->start_published_year ?></p>
               <p class="card-text">Anno di fine: <?php echo $production->aired_to_year ?></p>
               <p class="card-text">Episodi Totali: <?php echo $production->number_of_episodes ?></p>
               <p class="card-text">Numero Stagioni: <?php echo $production->number_of_seasons ?></p>
