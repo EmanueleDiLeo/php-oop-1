@@ -13,6 +13,9 @@ class Movie extends Production{
   }
 
   public function getFullInfo(){
-    
+    $time = times($this->running_time);
+    return "<p><strong>Anno di uscita:</strong> $this->start_published_year</p>
+    <p><strong>Durata in minuti:</strong> $this->running_time minuti</p> 
+    <p><Strong>Durata:</Strong> $time</p>";
   }
 }

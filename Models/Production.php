@@ -40,7 +40,7 @@
   }
 
   public function getFullInfo(){
-    
+    return "$this->title | $this->type | $this->image";
   }
   
 }

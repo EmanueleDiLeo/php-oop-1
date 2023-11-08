@@ -16,6 +16,9 @@ class TvSerie extends Production{
   }
 
   public function getFullInfo(){
-    
+    return "<p class='card-text'><strong>Anno di inizio: </strong>$this->start_published_year </p> 
+      <p class='card-text'><strong>Anno di fine: </strong>$this->aired_to_year</p>  
+      <p class='card-text'><strong>Episodi Totali: </strong>$this->number_of_episodes</p> 
+      <p class='card-text'><strong>Numero Stagioni: </strong>$this->number_of_seasons</p>";
   }
 }

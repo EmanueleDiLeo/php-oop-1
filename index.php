@@ -1,5 +1,7 @@
 <?php
 
+  include __DIR__ . "/partials/functions.php";
+
   try{
     require_once __DIR__ . '/Traits/Age.php';
     require_once __DIR__ . '/Models/Media.php';
@@ -11,8 +13,6 @@
   catch(Exception $e){
     $error = $e->getMessage();
   }
-
-  include __DIR__ . "/partials/functions.php";
 
 ?>
 
@@ -42,12 +42,16 @@
       <?php foreach($productions as $production){ ?>
       <div class="col-4 my-4">
         <div class="card h-100 m-3">
-        <img src="img/<?php echo $production->getImage()->file_name ?>" class="card-img-top" alt="<?php echo $production->getImage()->name ?>">
+        <img src="img/<?php echo $production->getImage()->file_name ?>" class="card-img-top h-100 object-fit-cover" alt="<?php echo $production->getImage()->name ?>">
           <div class="card-body">
-            <h5 class="card-title"><?php echo $production->getTitle() ?></h5>
-            <h6 class="card-title">Formato: <?php echo get_class($production) ?></h6>
-            <p class="card-text">Genere: <?php echo implode("/" , $production->getType() ) ?></p>
+            <h3 class="card-title text-danger mb-4"><?php echo $production->getTitle() ?></h3>
+            <p class="card-text"><strong>Formato: </strong><?php echo get_class($production) ?></p>
+            <p class="card-text"><strong>Genere: </strong><?php echo implode(", " , $production->getType() ) ?></p>
 
+            <!-- Utilizzo dell'override -->
+            <?php echo $production->getFullInfo() ?>
+
+            <!--  Utilizzando il get_class
             <?php if(get_class($production) == 'Movie'){ ?>
               <p class="card-text">Anno di uscita: <?php echo $production->start_published_year ?></p>
               <p class="card-text">Durata in minuti: <?php echo $production->running_time ?> minuti</p>
@@ -60,6 +64,7 @@
               <p class="card-text">Episodi Totali: <?php echo $production->number_of_episodes ?></p>
               <p class="card-text">Numero Stagioni: <?php echo $production->number_of_seasons ?></p>
             <?php } ?>
+            -->
 
           </div>
         </div>
